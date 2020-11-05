@@ -1,0 +1,43 @@
+{% extends 'block.twig' %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<ul class="recipe-list">
+					{% for recipe in recipes|slice(0, fields.number_to_show ? fields.number_to_show : recipes|length) %}
+						<li class="recipe-item">
+							<a href="{{recipe.link}}">
+								<img src={{recipe.thumbnail}} title="{{recipe.title}}" alt="{{recipe.title}}"/>
+								<div class="overlay">
+									<p>{{recipe.title}}</p>
+								</div>
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+				{% if pagination %}
+					<div class="recipe-list-pagination">
+						{% if recipes.pagination.prev %}
+							<a href="{{recipes.pagination.prev.link}}" class="prev {{recipes.pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
+						{% endif %}
+						<ul class="pages">
+							{% for page in recipes.pagination.pages %}
+								<li>
+									{% if page.link %}
+										<a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+									{% else %}
+										<span class="{{page.class}}">{{page.title}}</span>
+									{% endif %}
+								</li>
+							{% endfor %}
+						</ul>
+						{% if recipes.pagination.next %}
+							<a href="{{recipes.pagination.next.link}}" class="next {{recipes.pagination.next.link|length ? '' : 'invisible'}}">Next</a>
+						{% endif %}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

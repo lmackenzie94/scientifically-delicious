@@ -1,0 +1,45 @@
+<header id="masthead" class="site-header" role="banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs">
+				<nav class="header-nav">
+					<a class="title" href="{{site.link}}">
+
+						<h1 data-appear="fade-in">{{ site.title }}</h1>
+					</a>
+					<div class="menu-container">
+						<ul class="menu">
+							{% for item in header_menu.items %}
+								<li class="menu-item {{ item.classes|join(' ') }}">
+									<a class="menu-link" href="{{ item.link }}">{{ item.title }}</a>
+									{% if item.children %}
+										<ul class="menu-drop">
+											{% for child in item.children %}
+												<li class="menu-drop-item {{ child.classes|join(' ') }}">
+													<a href="{{ child.link }}">{{ child.title }}</a>
+												</li>
+											{% endfor %}
+										</ul>
+									{% endif %}
+								</li>
+							{% endfor %}
+						</ul>
+						{{function('get_search_form')}}
+
+					</div>
+
+				</nav>
+
+				{# registered in functions.php | added to context in timber.php | defined in Appearance > Widgets #}
+				{# {{primary_sidebar}} #}
+
+				<div class="hamburger" data-drawer-toggle>
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</header>

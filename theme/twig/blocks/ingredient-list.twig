@@ -1,0 +1,27 @@
+{% extends 'block.twig' %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6">
+
+				<table>
+					<tr>
+						<th>What</th>
+						<th>How Much</th>
+					</tr>
+					{% for ingredient in fields.ingredients %}
+						<tr>
+							<td>{{ingredient.name}}</td>
+							<td>{{ingredient.amount}}</td>
+						</tr>
+					{% endfor %}
+				</table>
+
+			</div>
+			<div class="col-xs-6">
+				Description
+			</div>
+		</div>
+	</div>
+{% endblock %}

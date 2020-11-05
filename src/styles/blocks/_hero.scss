@@ -1,0 +1,22 @@
+.section--hero {
+  background: white;
+  overflow: hidden;
+
+  .container {
+    h2 {
+      font-family: $body;
+    }
+    p {
+      font-size: 1.1rem;
+      font-weight: bold;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    // @media (min-aspect-ratio: 16/9) {
+    //   bottom: auto;
+    //   top: 95vh;
+    //   transform: translate(-50%, -100%);
+    // }
+  }
+}

@@ -1,0 +1,17 @@
+@import 'styles/mixins';
+@import 'styles/global-vars';
+@import 'styles/base';
+
+// blocks
+@import 'styles/blocks/hero';
+@import 'styles/blocks/ingredient-list';
+@import 'styles/blocks/recipe-list';
+@import 'styles/blocks/home-recipe-suggestions';
+
+// partials
+@import 'styles/partials/header';
+@import 'styles/partials/search';
+@import 'styles/partials/sidebar';
+@import 'styles/partials/searchform';
+@import 'styles/partials/category';
+@import 'styles/partials/footer';

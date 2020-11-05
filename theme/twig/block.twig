@@ -1,0 +1,4 @@
+<section class="section section--{{ slug }}" data-{{ block.id }} id="{{fields.title | default(block.title) | sanitize}}">
+    {% block content %}
+    {% endblock %}
+</section>

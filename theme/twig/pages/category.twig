@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+	<section class="section section--category">
+		<div class="container">
+			<h2>What's For
+				{{function('single_cat_title')}}?</h2>
+
+			{% include 'blocks/recipe-list.twig' with {recipes: posts} %}
+		</div>
+	</section>
+{% endblock %}

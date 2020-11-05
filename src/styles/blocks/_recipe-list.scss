@@ -1,0 +1,34 @@
+// .section--recipe-list {
+// global (used on multiple pages)
+.recipe-list {
+  @include recipe-list-secondary();
+}
+.recipe-list-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-family: $body;
+  color: $black;
+  .pages {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+    .page-number {
+      font-family: $body;
+      color: $black;
+      margin: 0 10px;
+      &.current {
+        color: $green;
+      }
+    }
+  }
+  .next,
+  .prev {
+    color: $black;
+    margin: 0 10px;
+  }
+}
+// }

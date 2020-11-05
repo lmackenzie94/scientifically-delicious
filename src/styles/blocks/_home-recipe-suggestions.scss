@@ -1,0 +1,30 @@
+.section--home-recipe-suggestions {
+  .recipe-suggestions {
+    @include recipe-list-primary();
+  }
+  .btn-wrapper {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    &:before,
+    &:after {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      overflow: hidden;
+      width: 42%;
+      height: 2px;
+      content: '';
+      background-color: $gray;
+    }
+    &:before {
+      left: 0;
+      text-align: right;
+    }
+    a.btn-primary {
+      margin: 4rem auto;
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

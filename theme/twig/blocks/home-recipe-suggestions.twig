@@ -1,0 +1,25 @@
+{% extends 'block.twig' %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<ul class="recipe-suggestions">
+					{% for recipe in recipes|slice(0, fields.number_to_show ? fields.number_to_show : recipes|length) %}
+						<li class="recipe-item">
+							<a href="{{recipe.link}}">
+								<img src={{recipe.thumbnail}} title="{{recipe.title}}" alt="{{recipe.title}}"/>
+								<div class="overlay">
+									<p>{{recipe.title}}</p>
+								</div>
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+				<div class="btn-wrapper">
+					<a href="{{fields.button.link}}" class="btn-primary">{{fields.button.text}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+<div class="site-drawer">
+	<div class="container">
+
+		<ul class="drawer__nav">
+			{% for item in footer_menu.items %}
+				<li class="menu-item {{ item.classes|join(' ') }}">
+					<a class="menu-link" href="{{ item.link }}">{{ item.title }}</a>
+					{% if item.children %}
+						<ul class="menu-drop">
+							{% for child in item.children %}
+								<li class="menu-drop-item">
+									<a href="{{ child.link }}">{{ child.title }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+
+		<ul class="drawer__contact">
+			[contact]
+		</ul>
+
+	</div>
+</div>

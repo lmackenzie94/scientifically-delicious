@@ -1,0 +1,17 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+	<section class="section section--search">
+		<div class="container">
+			<h2>Search Results For:
+				<span class="search-term">{{search_term}}</span>
+			</h2>
+			{% if posts.found_posts %}
+				{% include 'blocks/recipe-list.twig' with {recipes: posts} %}
+			{% else %}
+				<p class="no-results">Nothing to see here</p>
+				{{post.content}}
+			{% endif %}
+		</div>
+	</section>
+{% endblock %}
