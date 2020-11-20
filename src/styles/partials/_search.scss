@@ -1,7 +1,5 @@
 .section--search {
   h2 {
-    font-size: 3rem;
-    font-family: $header;
     .search-term {
       color: $green;
     }
@@ -10,9 +8,5 @@
     font-size: 2rem;
     color: $green;
     text-align: center;
-  }
-
-  .recipe-item {
-    margin-top: 0;
   }
 }

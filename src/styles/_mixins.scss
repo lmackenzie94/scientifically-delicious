@@ -90,17 +90,20 @@ $breakpoints: (
 @mixin recipe-list-primary() {
   // used on home page
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   list-style: none;
   margin: 0;
   padding: 0;
   .recipe-item {
-    height: 40vh;
+    height: 35vh;
+    max-height: 400px;
     max-width: 300px;
     flex: 1 0 auto;
-    border: 5px solid #000;
+    border: 5px solid $black;
     padding: 5px;
     overflow: hidden;
+    margin: 1.5rem 1rem;
     a {
       display: block;
       height: 100%;
@@ -130,8 +133,12 @@ $breakpoints: (
         p {
           font-family: $header;
           font-size: 2rem;
+          font-weight: bold;
+          line-height: 1.2;
+          text-align: center;
           color: white;
           margin: 1rem 0;
+          padding: 0 5px;
         }
       }
     }
@@ -148,19 +155,33 @@ $breakpoints: (
   }
 }
 @mixin recipe-list-secondary() {
-  // used on recipes page
+  // used on recipes and category page
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   list-style: none;
-  margin: 0 -2rem;
+  margin: 0;
   padding: 0;
+
   .recipe-item {
-    width: 250px;
-    height: 250px;
-    border: 5px solid #000;
+    height: 225px;
+    flex: 0 0 225px;
+    border: 5px solid $black;
     border-radius: 50%;
     padding: 5px;
     overflow: hidden;
-    margin: 3rem 2rem;
+    margin: 3rem 1.5rem 0 1.5rem;
+    @include media(sm) {
+      height: 200px;
+      flex: 0 0 200px;
+      margin: 3rem 1rem 0 1rem;
+    }
+    @include media(xs) {
+      height: 155px;
+      flex: 0 0 155px;
+      border: 3px solid $black;
+      padding: 3px;
+    }
     a {
       display: block;
       height: 100%;
@@ -187,9 +208,17 @@ $breakpoints: (
         transition: all 0.4s ease-in-out;
         p {
           font-family: $header;
-          font-size: 2rem;
+          font-size: 1.75rem;
+          font-weight: bold;
+          line-height: 1.2;
           color: white;
           margin: 1rem 0;
+          padding: 0 5px;
+          text-align: center;
+
+          @include media(xs) {
+            font-size: 1.5rem;
+          }
         }
       }
     }

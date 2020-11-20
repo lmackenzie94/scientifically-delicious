@@ -22,32 +22,6 @@
             "min": "",
             "max": "",
             "step": ""
-        },
-        {
-            "key": "field_5f8f14ce8cca7",
-            "label": "Randomize?",
-            "name": "randomize",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f8f149a8cca6",
-                        "operator": "!=empty"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
         }
     ],
     "location": [
@@ -67,5 +41,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603212575
+    "modified": 1604691226
 }

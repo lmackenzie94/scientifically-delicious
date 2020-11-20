@@ -1,0 +1,17 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+	<section class="section section--blogs">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<ul>
+						{% for post in posts %}
+							{% include ['partials/tease-'~post.post_type~'.twig', 'partials/tease.twig'] %}
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

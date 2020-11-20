@@ -2,8 +2,13 @@
 
 {% block content %}
 
-	{# {% include 'blocks.twig' %} #}
+	<section class="section section--category">
+		<div class="container">
+			<h2>All
+				{{post.title}}</h2>
+			{% include 'blocks/recipe-list.twig' with {recipes: all_recipes, pagination: TRUE} %}
+		</div>
+	</section>
 
-	{% include 'blocks/recipe-list.twig' with {recipes: all_recipes, pagination: TRUE} %}
 
 {% endblock %}

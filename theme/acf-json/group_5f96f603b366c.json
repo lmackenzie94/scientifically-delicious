@@ -24,32 +24,6 @@
             "step": ""
         },
         {
-            "key": "field_5f96f603c040f",
-            "label": "Randomize?",
-            "name": "randomize",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f96f603c03da",
-                        "operator": "!=empty"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_5f96f6205d1d8",
             "label": "Button",
             "name": "button",
@@ -124,5 +98,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603729369
+    "modified": 1604694736
 }

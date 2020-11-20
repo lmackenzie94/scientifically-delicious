@@ -5,10 +5,12 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<ul class="recipe-suggestions">
-					{% for recipe in recipes|slice(0, fields.number_to_show ? fields.number_to_show : recipes|length) %}
+					{% for recipe in random_recipes|slice(0, fields.number_to_show ? fields.number_to_show : recipes|length) %}
 						<li class="recipe-item">
-							<a href="{{recipe.link}}">
-								<img src={{recipe.thumbnail}} title="{{recipe.title}}" alt="{{recipe.title}}"/>
+							<a
+								href="{{recipe.link}}">
+								{# how to use ACF image not thumbnail?? #}
+								{% include 'partials/image.twig' with {image: recipe.thumbnail} %}
 								<div class="overlay">
 									<p>{{recipe.title}}</p>
 								</div>

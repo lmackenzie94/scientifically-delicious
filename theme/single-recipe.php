@@ -2,5 +2,5 @@
   $context = Timber::get_context();
   $post = new TimberPost();
   $context['post'] = $post;
-  Timber::render('recipe.twig', $context );
+  Timber::render('single-recipe.twig', $context );
 ?>

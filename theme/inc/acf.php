@@ -29,17 +29,18 @@ add_action('acf/init', function () {
             'supports' => [ 'multiple' => false, ],
         ]);     
 
-        acf_register_block([
-            'name' => 'ingredient-list',
-            'title' => __('Ingredient List'),
-            'description' => __('ingredient-list'),
-            'render_callback' => '__block_render_callback',
-            'category' => 'my-blocks',
-            'mode' => 'preview',
-            'icon' => 'editor-alignleft',
-            'keywords' => ['ingredient-list'],
-            //'supports' => [ 'multiple' => false, ],
-        ]);
+        // recipe
+acf_register_block([
+    'name' => 'recipe',
+    'title' => __('Recipe'),
+    'description' => __('recipe'),
+    'render_callback' => '__block_render_callback',
+    'category' => 'my-blocks',
+    'mode' => 'preview',
+    'icon' => 'editor-alignleft',
+    'keywords' => ['recipe'],
+    //'supports' => [ 'multiple' => false, ],
+]);
 
         // recipe-list
 acf_register_block([
@@ -82,11 +83,20 @@ function __block_render_callback($block, $content = '', $is_preview = false, $po
     $context['post'] = new TimberPost($post_id);
     $context['block'] = $block;
     $context['fields'] = get_fields();
-     $args = array(
-    'numberposts' => -1,
+
+    $args = array(
+    'posts_per_page' => -1,
+    'post_type' => 'recipe',
+    'orderby' => 'rand'
+  );  
+
+  $args2 = array(
+    'posts_per_page' => -1,
     'post_type' => 'recipe',
   );  
-  $context['recipes'] = Timber::get_posts($args);
+
+  $context['all_recipes'] = Timber::get_posts($args2);
+   $context['random_recipes'] = Timber::get_posts($args);
     Timber::render(array(
             "blocks/{$slug}.twig",
     ), $context);
@@ -94,25 +104,21 @@ function __block_render_callback($block, $content = '', $is_preview = false, $po
 
 // include site styles in block editor
 
-/*
+
 add_action( 'enqueue_block_assets', function() {
 	wp_enqueue_style(
 		'block_css',
 		get_bloginfo( 'stylesheet_directory' ) . '/build/bundle.css'
 	);
 });
-*/
 
 // block templates
 
-/*
+
 add_action('init', function() {
-    $post_type_object = get_post_type_object( 'page' );
+    $post_type_object = get_post_type_object( 'recipe' );
     $post_type_object->template = [
-        [ 'acf/hero' ],
-        [ 'acf/content' ],
-        [ 'acf/contact' ],
+        [ 'acf/recipe' ],
     ];
     $post_type_object->template_lock = 'all';
 });
-*/

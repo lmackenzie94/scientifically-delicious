@@ -3,10 +3,13 @@
 {% block content %}
 	<section class="section section--category">
 		<div class="container">
-			<h2>What's For
-				{{function('single_cat_title')}}?</h2>
+			{% set cat = function('single_cat_title', "", false) %}
 
-			{% include 'blocks/recipe-list.twig' with {recipes: posts} %}
+			<h2>What's
+				{{cat == 'Drink' ? 'To' : 'For'}}
+				{{cat}}?</h2>
+
+			{% include 'blocks/recipe-list.twig' with {custom_recipes: posts} %}
 		</div>
 	</section>
 {% endblock %}

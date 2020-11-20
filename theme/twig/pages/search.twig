@@ -7,7 +7,7 @@
 				<span class="search-term">{{search_term}}</span>
 			</h2>
 			{% if posts.found_posts %}
-				{% include 'blocks/recipe-list.twig' with {recipes: posts} %}
+				{% include 'blocks/recipe-list.twig' with {custom_recipes: posts} %}
 			{% else %}
 				<p class="no-results">Nothing to see here</p>
 				{{post.content}}
