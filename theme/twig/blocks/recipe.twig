@@ -3,8 +3,8 @@
 {% block content %}
 	<div class="container">
 		<div class="row recipe-wrapper">
-			<div class="recipe-image">
-				{% include 'partials/image.twig' with {image: fields.image} %}
+			<div>
+				{% include 'partials/image.twig' with {image: fields.image, class: 'recipe-image'} %}
 			</div>
 			<div class="recipe-content">
 				<div class="recipe-header">
@@ -14,8 +14,12 @@
 					{% endfor %}
 				</div>
 				<div class="ingredients-directions">
-					{{fields.ingredients}}
-					{{fields.directions}}
+					<div class="ingredients">
+						{{fields.ingredients}}
+					</div>
+					<div class="directions">
+						{{fields.directions}}
+					</div>
 				</div>
 			</div>
 		</div>

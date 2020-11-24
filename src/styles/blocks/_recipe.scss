@@ -36,7 +36,7 @@
           align-items: center;
           justify-content: center;
           h2 {
-            margin: 0 5px 10px 0;
+            margin: 0 5px 0 0;
           }
         }
       }
@@ -44,27 +44,40 @@
       .ingredients-directions {
         display: flex;
         margin: 0.5rem 0;
-        ul {
-          color: $darkGray;
-          padding: 0 1rem 0 25px;
+        .ingredients {
           border-right: 1px solid $lightGray;
-        }
-        ol {
-          padding-left: 30px;
-          & li::marker {
-            color: $green;
+
+          ul {
+            color: $darkGray;
+            padding: 0 1rem 0 25px;
           }
         }
+        .directions {
+          padding-left: 30px;
+
+          ol {
+            padding-left: 30px;
+            & li::marker {
+              color: $green;
+            }
+          }
+        }
+
         @include media(sm) {
           flex-direction: column;
           align-items: center;
-          ul {
+          .ingredients {
             border-right: none;
-            border-bottom: 1px solid $lightGray;
-            padding: 0 0 1rem 0;
+
+            ul {
+              border-bottom: 1px solid $lightGray;
+              padding: 0 0 1rem 0;
+            }
           }
-          ol {
-            padding-right: 30px;
+          .directions {
+            ol {
+              padding-right: 30px;
+            }
           }
         }
       }
