@@ -2,6 +2,9 @@
 @import 'styles/global-vars';
 @import 'styles/base';
 
+// sections
+@import 'styles/sections/content';
+
 // blocks
 @import 'styles/blocks/hero';
 @import 'styles/blocks/ingredient-list';

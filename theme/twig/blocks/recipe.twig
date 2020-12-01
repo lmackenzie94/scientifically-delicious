@@ -9,9 +9,11 @@
 			<div class="recipe-content">
 				<div class="recipe-header">
 					<h2>{{post.title}}</h2>
-					{% for cat in post.categories %}
-						<a href="{{cat.link}}" class="tag {{cat.name|lower}}">{{cat.name}}</a>
-					{% endfor %}
+					<div>
+						{% for cat in post.categories %}
+							<a href="{{cat.link}}" class="tag {{cat.name|lower}}">{{cat.name}}</a>
+						{% endfor %}
+					</div>
 				</div>
 				<div class="ingredients-directions">
 					<div class="ingredients">
